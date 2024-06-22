@@ -1,5 +1,5 @@
 --User
-post /users
+post /users/register
 body
     {
   "hn": "string",
@@ -38,56 +38,3 @@ body
 
 delete /users/:id
 
-
------------------------Appointment-----------------
-post /appointments
-body
-{
-  "hn": "123456",
-  "doctorId": 1,
-  "appointmentTime": "2023-07-01T10:00:00",
-  "status": "PENDING"
-}
-response
-{
-  "message": "Appointment created successfully",
-  "appointmentId": 1
-}
-
-get /appointments
-response 
-[
-  {
-    "id": 1,
-    "hn": "123456",
-    "doctorId": 1,
-    "appointmentTime": "2023-07-01T10:00:00",
-    "status": "PENDING"
-  }
-]
-
-get /appointments/{id}
-response
-{
-  "id": 1,
-  "hn": "123456",
-  "doctorId": 1,
-  "appointmentTime": "2023-07-01T10:00:00",
-  "status": "PENDING"
-}
-
-put /appointments/:id
-body
-{
-  "hn": "123456",
-  "doctorId": 1,
-  "appointmentTime": "2023-07-01T11:00:00",
-  "status": "COMPLETED"
-}
-
-response
-{
-  "message": "Appointment updated successfully"
-}
-
-delete /appointments/:id
