@@ -3,7 +3,8 @@ POST /queues
 body
 {
   "userId": 1,
-  "doctorTimeId": 1
+  "doctorTimeday": string
+  "doctorTimetime": string
 }
 response
 {
@@ -18,7 +19,8 @@ response
   {
     "id": 1,
     "userId": 1,
-    "doctorTimeId": 1
+    "doctorTimeday": string
+  "doctorTimetime": string
   }
 ]
 
@@ -27,7 +29,8 @@ response
 {
   "id": 1,
   "userId": 1,
-  "doctorTimeId": 1
+  "doctorTimeday": string
+  "doctorTimetime": string
 }
 
 
@@ -35,7 +38,8 @@ PUT /queues/:id
 body
 {
   "userId": 2,
-  "doctorTimeId": 2
+  "doctorTimeday": string
+  "doctorTimetime": string
 }
 
 DELETE /queues/:id

@@ -1,8 +1,8 @@
 ---------------------Doctor----------------------
 POST /doctors
-body
+body (multipart/form-data)
 {
-  "clinicId": 1,
+  "clinic": string,
   "firstName": "Jane",
   "lastName": "Doe",
   "birthDate": "1980-02-01",
@@ -13,6 +13,12 @@ body
 response
 {
   "message": "Doctor created successfully",
+  "clinic": string,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "doctor_image.png"
   "doctorId": 1
 }
 
@@ -21,7 +27,7 @@ response
 [
   {
     "id": 1,
-    "clinicId": 1,
+    "clinic": string,
     "firstName": "Jane",
     "lastName": "Doe",
     "birthDate": "1980-02-01",
@@ -45,7 +51,7 @@ response
 PUT /doctors/:id
 body
 {
-  "clinicId": 2,
+  "clinic": string,
   "firstName": "Jane",
   "lastName": "Doe",
   "birthDate": "1980-02-01",

@@ -3,7 +3,7 @@ POST /medicalcertificates
 body(multipart/form-data)
 {
   "vn": 1,
-  "doctorId": 1,
+  "doctorName":string
   "hn": "123456",
   "certificate": "certificate_image.png"
 }
@@ -12,6 +12,7 @@ response
 {
   "vn": 1,
   "doctorId": 1,
+  "doctorName":string,
   "hn": "123456",
   "certificate": "certificate_image.png"
 }
@@ -22,7 +23,7 @@ response
   {
     "id": 1,
     "vn": 1,
-    "doctorId": 1,
+    "doctorName":string,
     "hn": "123456",
     "certificate": "certificate_image.png"
   }
@@ -33,7 +34,7 @@ response
 {
   "id": 1,
   "vn": 1,
-  "doctorId": 1,
+  "doctorName":string,
   "hn": "123456",
   "certificate": "certificate_image.png"
 }
@@ -42,7 +43,7 @@ PUT /medicalcertificates/:id
 body
 {
   "vn": 1,
-  "doctorId": 1,
+  "doctorName":string,
   "hn": "123456",
   "certificate": "new_certificate_image.png"
 }
