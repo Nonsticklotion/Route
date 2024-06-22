@@ -10,7 +10,10 @@ body
 response
 {
   "message": "Appointment created successfully",
-  "appointmentId": 1
+  "appointmentId": 1,
+   "hn": "123456",
+  "doctorId": 1,
+  "appointmentTime": "2023-07-01T10:00:00",
 }
 
 get /appointments
@@ -21,34 +24,41 @@ response
     "hn": "123456",
     "doctorId": 1,
     "appointmentTime": "2023-07-01T10:00:00",
-    "status": "PENDING"
+    "status": "PENDING",
+     "firstName" : "doctorName"
   },
-  "firstName" : "doctorName"
+ 
 ]
 
-get /appointments/{id}
+get /appointments/:id
 response
-{{
+{
   "id": 1,
   "hn": "123456",
   "doctorId": 1,
+  "doctorName":"String"
   "appointmentTime": "2023-07-01T10:00:00",
   "status": "PENDING"
-},
-{"firstName" : "doctorName"}}
+}
 
 put /appointments/:id
 body
 {
   "hn": "123456",
   "doctorId": 1,
+  "doctorName":"String"
   "appointmentTime": "2023-07-01T11:00:00",
   "status": "COMPLETED"
 }
 
 response
 {
-  "message": "Appointment updated successfully"
+  "message": "Appointment updated successfully",
+    "hn": "123456",
+  "doctorId": 1,
+  "doctorName":"String"
+  "appointmentTime": "2023-07-01T11:00:00",
+  "status": "COMPLETED"
 }
 
 delete /appointments/:id
