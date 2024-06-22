@@ -3,8 +3,8 @@ POST /visitornumbers
 body
 {
   "hn": "123456",
-  "clinicId": 1,
-  "doctorId": 1,
+  "clinicCategory": "string",
+  "doctorName": "string",
   "medicineId": 1,
   "weight": 70.5,
   "height": 175.3,
@@ -61,6 +61,8 @@ response
   "hn": "123456",
   "clinicId": 1,
   "doctorId": 1,
+  ""doctorName":"string",
+  ""clinicName":"string"
   "medicineId": 1,
   "weight": 70.5,
   "height": 175.3,
