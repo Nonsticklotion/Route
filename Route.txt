@@ -1,0 +1,566 @@
+--User
+post /users
+body
+    {
+  "hn": "string",
+  "password": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "phone": "string",
+  "email": "string",
+  "address": "string",
+  "birthDate": "date",
+  "nationality": "string",
+  "gender": "enum",
+  "drugAllergies": "string"
+}
+
+get /users
+response
+200 user
+
+get/users/:id
+
+put /users/:id
+body
+{
+  "password": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "phone": "string",
+  "email": "string",
+  "address": "string",
+  "birthDate": "date",
+  "nationality": "string",
+  "gender": "enum",
+  "drugAllergies": "string"
+}
+
+delete /users/:id
+
+
+-----------------------Appointment-----------------
+post /appointments
+body
+{
+  "hn": "123456",
+  "doctorId": 1,
+  "appointmentTime": "2023-07-01T10:00:00",
+  "status": "PENDING"
+}
+response
+{
+  "message": "Appointment created successfully",
+  "appointmentId": 1
+}
+
+get /appointments
+response 
+[
+  {
+    "id": 1,
+    "hn": "123456",
+    "doctorId": 1,
+    "appointmentTime": "2023-07-01T10:00:00",
+    "status": "PENDING"
+  }
+]
+
+get /appointments/{id}
+response
+{
+  "id": 1,
+  "hn": "123456",
+  "doctorId": 1,
+  "appointmentTime": "2023-07-01T10:00:00",
+  "status": "PENDING"
+}
+
+put /appointments/:id
+body
+{
+  "hn": "123456",
+  "doctorId": 1,
+  "appointmentTime": "2023-07-01T11:00:00",
+  "status": "COMPLETED"
+}
+
+response
+{
+  "message": "Appointment updated successfully"
+}
+
+delete /appointments/:id
+
+---------------------Clinic-----------------------
+POST /clinics
+body(multipart/form-data)
+{
+  "name": "Health Clinic",
+  "detail": "Provides general health services",
+  "image": "clinic_image.png"
+}
+
+{
+  "message": "Clinic created successfully",
+  "clinicId": 1
+}
+
+
+GET /clinics
+response
+[
+  {
+    "id": 1,
+    "name": "Health Clinic",
+    "detail": "Provides general health services",
+    "image": "clinic_image.png"
+  }
+]
+
+GET /clinics/:id
+response
+{
+  "id": 1,
+  "name": "Health Clinic",
+  "detail": "Provides general health services",
+  "image": "clinic_image.png"
+}
+
+
+PUT /clinics/:id
+body (multipart/form-data)
+{
+  "name": "Updated Health Clinic",
+  "detail": "Provides updated health services",
+  "image": "updated_clinic_image.png"
+}
+response
+{
+  "message": "Clinic updated successfully"
+}
+
+DELETE /clinics/:id
+
+--------------------Admin-------------------
+POST /admins
+body
+{
+  "role": "account",
+  "userName": "admin123",
+  "password": "password123"
+}
+response
+{
+  "message": "Admin created successfully",
+  "adminId": 1
+}
+
+GET /admins
+
+response
+[
+  {
+    "id": 1,
+    "role": "account",
+    "userName": "admin123",
+    "password": "password123"
+  }
+]
+
+GET /admins/:id
+response
+{
+  "id": 1,
+  "role": "account",
+  "userName": "admin123",
+  "password": "password123"
+}
+
+PUT /admins/:id
+
+body
+{
+  "role": "nurse",
+  "userName": "admin456",
+  "password": "newpassword123"
+}
+
+DELETE /admins/:id
+
+---------------------Doctor----------------------
+POST /doctors
+body
+{
+  "clinicId": 1,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "doctor_image.png"
+}
+
+response
+{
+  "message": "Doctor created successfully",
+  "doctorId": 1
+}
+
+GET /doctors
+response
+[
+  {
+    "id": 1,
+    "clinicId": 1,
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "birthDate": "1980-02-01",
+    "education": "MD",
+    "image": "doctor_image.png"
+  }
+]
+
+GET /doctors/:id
+response
+{
+  "id": 1,
+  "clinicId": 1,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "doctor_image.png"
+}
+
+PUT /doctors/:id
+body
+{
+  "clinicId": 2,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "new_doctor_image.png"
+}
+
+response
+{
+  "clinicId": 2,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "new_doctor_image.png"
+}
+
+DELETE /doctors/:id
+
+------------------------Medicine-----------------------
+
+POST /medicines
+
+body
+{
+  "name": "Paracetamol",
+  "quantity": 100
+}
+response
+{
+  "message": "Medicine created successfully",
+  "medicineId": 1
+}
+
+GET /medicines
+
+response
+[
+  {
+    "id": 1,
+    "name": "Paracetamol",
+    "quantity": 100
+  }
+]
+
+GET /medicines/:id
+response
+{
+  "id": 1,
+  "name": "Paracetamol",
+  "quantity": 100
+}
+
+PUT /medicines/:id
+body
+{
+  "name": "Ibuprofen",
+  "quantity": 50
+}
+response
+{
+  "name": "Ibuprofen",
+  "quantity": 50
+}
+
+DELETE /medicines/{id}
+
+-------------------------------VisitorNumber-----------------
+POST /visitornumbers
+body
+{
+  "hn": "123456",
+  "clinicId": 1,
+  "doctorId": 1,
+  "medicineId": 1,
+  "weight": 70.5,
+  "height": 175.3,
+  "heartRate": 72,
+  "temperature": 37.2,
+  "bloodPressure": "120/80",
+  "symptoms": "Headache",
+  "treatmentResult": "Prescribed rest",
+  "medicine": "Paracetamol",
+  "diagnosis": "Migraine",
+  "totalPrice": 150,
+  "type": "OPD",
+  "summary": "Patient advised to rest and take medication",
+  "receipt": "receipt_image.png",
+  "status": "TREATMENT"
+}
+response
+{
+  "message": "VisitorNumber created successfully",
+  "visitorNumberId": 1
+}
+
+GET /visitornumbers
+response
+[
+  {
+    "id": 1,
+    "hn": "123456",
+    "clinicId": 1,
+    "doctorId": 1,
+    "medicineId": 1,
+    "weight": 70.5,
+    "height": 175.3,
+    "heartRate": 72,
+    "temperature": 37.2,
+    "bloodPressure": "120/80",
+    "symptoms": "Headache",
+    "treatmentResult": "Prescribed rest",
+    "medicine": "Paracetamol",
+    "diagnosis": "Migraine",
+    "totalPrice": 150,
+    "type": "OPD",
+    "summary": "Patient advised to rest and take medication",
+    "receipt": "receipt_image.png",
+    "status": "TREATMENT"
+  }
+]
+
+GET /visitornumbers/:id
+
+response
+{
+  "id": 1,
+  "hn": "123456",
+  "clinicId": 1,
+  "doctorId": 1,
+  "medicineId": 1,
+  "weight": 70.5,
+  "height": 175.3,
+  "heartRate": 72,
+  "temperature": 37.2,
+  "bloodPressure": "120/80",
+  "symptoms": "Headache",
+  "treatmentResult": "Prescribed rest",
+  "medicine": "Paracetamol",
+  "diagnosis": "Migraine",
+  "totalPrice": 150,
+  "type": "OPD",
+  "summary": "Patient advised to rest and take medication",
+  "receipt": "receipt_image.png",
+  "status": "TREATMENT"
+}
+
+PUT /visitornumbers/:id
+body
+{
+  "hn": "123456",
+  "clinicId": 1,
+  "doctorId": 1,
+  "medicineId": 1,
+  "weight": 70.5,
+  "height": 175.3,
+  "heartRate": 72,
+  "temperature": 37.2,
+  "bloodPressure": "120/80",
+  "symptoms": "Headache",
+  "treatmentResult": "Prescribed rest",
+  "medicine": "Ibuprofen",
+  "diagnosis": "Migraine",
+  "totalPrice": 150,
+  "type": "OPD",
+  "summary": "Patient advised to rest and take medication",
+  "receipt": "new_receipt_image.png",
+  "status": "COMPLETED"
+}
+
+DELETE /visitornumbers/:id
+
+----------------------MedicalCertificate---------------------
+POST /medicalcertificates
+body(multipart/form-data)
+{
+  "vn": 1,
+  "doctorId": 1,
+  "hn": "123456",
+  "certificate": "certificate_image.png"
+}
+
+response
+{
+  "vn": 1,
+  "doctorId": 1,
+  "hn": "123456",
+  "certificate": "certificate_image.png"
+}
+
+GET /medicalcertificates
+response
+[
+  {
+    "id": 1,
+    "vn": 1,
+    "doctorId": 1,
+    "hn": "123456",
+    "certificate": "certificate_image.png"
+  }
+]
+
+GET /medicalcertificates/:id
+response
+{
+  "id": 1,
+  "vn": 1,
+  "doctorId": 1,
+  "hn": "123456",
+  "certificate": "certificate_image.png"
+}
+
+PUT /medicalcertificates/:id
+body
+{
+  "vn": 1,
+  "doctorId": 1,
+  "hn": "123456",
+  "certificate": "new_certificate_image.png"
+}
+
+DELETE /medicalcertificates/:id
+
+-------------------------Queue------------------------
+POST /queues
+body
+{
+  "userId": 1,
+  "doctorTimeId": 1
+}
+response
+{
+  "message": "Queue created successfully",
+  "queueId": 1
+}
+
+
+GET /queues
+response
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "doctorTimeId": 1
+  }
+]
+
+GET /queues/:id
+response
+{
+  "id": 1,
+  "userId": 1,
+  "doctorTimeId": 1
+}
+
+
+PUT /queues/:id
+body
+{
+  "userId": 2,
+  "doctorTimeId": 2
+}
+
+DELETE /queues/:id
+
+------------------------------DoctorTime----------------------
+
+POST /doctortimes
+
+body
+{
+  "doctorId": 1,
+  "date": "2023-07-01",
+  "day": "MON",
+  "time": "MORNING"
+}
+response
+{
+  "message": "DoctorTime created successfully",
+  "doctorTimeId": 1
+}
+
+GET /doctortimes
+response 
+[
+  {
+    "id": 1,
+    "doctorId": 1,
+    "date": "2023-07-01",
+    "day": "MON",
+    "time": "MORNING"
+  }
+]
+
+GET /doctortimes/:id
+response
+{
+  "id": 1,
+  "doctorId": 1,
+  "date": "2023-07-01",
+  "day": "MON",
+  "time": "MORNING"
+}
+PUT /doctortimes/:id
+body
+{
+  "doctorId": 1,
+  "date": "2023-07-02",
+  "day": "TUE",
+  "time": "AFTERNOON"
+}
+response
+{
+  "doctorId": 1,
+  "date": "2023-07-02",
+  "day": "TUE",
+  "time": "AFTERNOON"
+}
+
+DELETE /doctortimes/:id
+
+{
+  "message": "DoctorTime deleted successfully"
+}
+
+
+
+

@@ -1,0 +1,45 @@
+--------------------Admin-------------------
+POST /admins
+body
+{
+  "role": "account",
+  "userName": "admin123",
+  "password": "password123"
+}
+response
+{
+  "message": "Admin created successfully",
+  "adminId": 1
+}
+
+GET /admins
+
+response
+[
+  {
+    "id": 1,
+    "role": "account",
+    "userName": "admin123",
+    "password": "password123"
+  }
+]
+
+GET /admins/:id
+response
+{
+  "id": 1,
+  "role": "account",
+  "userName": "admin123",
+  "password": "password123"
+}
+
+PUT /admins/:id
+
+body
+{
+  "role": "nurse",
+  "userName": "admin456",
+  "password": "newpassword123"
+}
+
+DELETE /admins/:id

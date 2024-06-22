@@ -1,0 +1,41 @@
+-------------------------Queue------------------------
+POST /queues
+body
+{
+  "userId": 1,
+  "doctorTimeId": 1
+}
+response
+{
+  "message": "Queue created successfully",
+  "queueId": 1
+}
+
+
+GET /queues
+response
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "doctorTimeId": 1
+  }
+]
+
+GET /queues/:id
+response
+{
+  "id": 1,
+  "userId": 1,
+  "doctorTimeId": 1
+}
+
+
+PUT /queues/:id
+body
+{
+  "userId": 2,
+  "doctorTimeId": 2
+}
+
+DELETE /queues/:id

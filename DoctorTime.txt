@@ -1,0 +1,63 @@
+------------------------------DoctorTime----------------------
+
+POST /doctortimes
+
+body
+{
+  "doctorId": 1,
+  "date": "2023-07-01",
+  "day": "MON",
+  "time": "MORNING"
+}
+response
+{
+  "message": "DoctorTime created successfully",
+  "doctorTimeId": 1
+}
+
+GET /doctortimes
+response 
+[
+  {
+    "id": 1,
+    "doctorId": 1,
+    "date": "2023-07-01",
+    "day": "MON",
+    "time": "MORNING"
+  }
+]
+
+GET /doctortimes/:id
+response
+{
+  "id": 1,
+  "doctorId": 1,
+  "date": "2023-07-01",
+  "day": "MON",
+  "time": "MORNING"
+}
+PUT /doctortimes/:id
+body
+{
+  "doctorId": 1,
+  "date": "2023-07-02",
+  "day": "TUE",
+  "time": "AFTERNOON"
+}
+response
+{
+  "doctorId": 1,
+  "date": "2023-07-02",
+  "day": "TUE",
+  "time": "AFTERNOON"
+}
+
+DELETE /doctortimes/:id
+
+{
+  "message": "DoctorTime deleted successfully"
+}
+
+
+
+

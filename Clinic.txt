@@ -1,0 +1,49 @@
+---------------------Clinic-----------------------
+POST /clinics
+body(multipart/form-data)
+{
+  "name": "Health Clinic",
+  "detail": "Provides general health services",
+  "image": "clinic_image.png"
+}
+
+{
+  "message": "Clinic created successfully",
+  "clinicId": 1
+}
+
+
+GET /clinics
+response
+[
+  {
+    "id": 1,
+    "name": "Health Clinic",
+    "detail": "Provides general health services",
+    "image": "clinic_image.png"
+  }
+]
+
+GET /clinics/:id
+response
+{
+  "id": 1,
+  "name": "Health Clinic",
+  "detail": "Provides general health services",
+  "image": "clinic_image.png"
+}
+
+
+PUT /clinics/:id
+body (multipart/form-data)
+{
+  "name": "Updated Health Clinic",
+  "detail": "Provides updated health services",
+  "image": "updated_clinic_image.png"
+}
+response
+{
+  "message": "Clinic updated successfully"
+}
+
+DELETE /clinics/:id

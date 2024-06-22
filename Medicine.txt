@@ -1,0 +1,47 @@
+------------------------Medicine-----------------------
+
+POST /medicines
+
+body
+{
+  "name": "Paracetamol",
+  "quantity": 100
+}
+response
+{
+  "message": "Medicine created successfully",
+  "medicineId": 1
+}
+
+GET /medicines
+
+response
+[
+  {
+    "id": 1,
+    "name": "Paracetamol",
+    "quantity": 100
+  }
+]
+
+GET /medicines/:id
+response
+{
+  "id": 1,
+  "name": "Paracetamol",
+  "quantity": 100
+}
+
+PUT /medicines/:id
+body
+{
+  "name": "Ibuprofen",
+  "quantity": 50
+}
+response
+{
+  "name": "Ibuprofen",
+  "quantity": 50
+}
+
+DELETE /medicines/{id}

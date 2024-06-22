@@ -1,0 +1,104 @@
+-------------------------------VisitorNumber-----------------
+POST /visitornumbers
+body
+{
+  "hn": "123456",
+  "clinicId": 1,
+  "doctorId": 1,
+  "medicineId": 1,
+  "weight": 70.5,
+  "height": 175.3,
+  "heartRate": 72,
+  "temperature": 37.2,
+  "bloodPressure": "120/80",
+  "symptoms": "Headache",
+  "treatmentResult": "Prescribed rest",
+  "medicine": "Paracetamol",
+  "diagnosis": "Migraine",
+  "totalPrice": 150,
+  "type": "OPD",
+  "summary": "Patient advised to rest and take medication",
+  "receipt": "receipt_image.png",
+  "status": "TREATMENT"
+}
+response
+{
+  "message": "VisitorNumber created successfully",
+  "visitorNumberId": 1
+}
+
+GET /visitornumbers
+response
+[
+  {
+    "id": 1,
+    "hn": "123456",
+    "clinicId": 1,
+    "doctorId": 1,
+    "medicineId": 1,
+    "weight": 70.5,
+    "height": 175.3,
+    "heartRate": 72,
+    "temperature": 37.2,
+    "bloodPressure": "120/80",
+    "symptoms": "Headache",
+    "treatmentResult": "Prescribed rest",
+    "medicine": "Paracetamol",
+    "diagnosis": "Migraine",
+    "totalPrice": 150,
+    "type": "OPD",
+    "summary": "Patient advised to rest and take medication",
+    "receipt": "receipt_image.png",
+    "status": "TREATMENT"
+  }
+]
+
+GET /visitornumbers/:id
+
+response
+{
+  "id": 1,
+  "hn": "123456",
+  "clinicId": 1,
+  "doctorId": 1,
+  "medicineId": 1,
+  "weight": 70.5,
+  "height": 175.3,
+  "heartRate": 72,
+  "temperature": 37.2,
+  "bloodPressure": "120/80",
+  "symptoms": "Headache",
+  "treatmentResult": "Prescribed rest",
+  "medicine": "Paracetamol",
+  "diagnosis": "Migraine",
+  "totalPrice": 150,
+  "type": "OPD",
+  "summary": "Patient advised to rest and take medication",
+  "receipt": "receipt_image.png",
+  "status": "TREATMENT"
+}
+
+PUT /visitornumbers/:id
+body
+{
+  "hn": "123456",
+  "clinicId": 1,
+  "doctorId": 1,
+  "medicineId": 1,
+  "weight": 70.5,
+  "height": 175.3,
+  "heartRate": 72,
+  "temperature": 37.2,
+  "bloodPressure": "120/80",
+  "symptoms": "Headache",
+  "treatmentResult": "Prescribed rest",
+  "medicine": "Ibuprofen",
+  "diagnosis": "Migraine",
+  "totalPrice": 150,
+  "type": "OPD",
+  "summary": "Patient advised to rest and take medication",
+  "receipt": "new_receipt_image.png",
+  "status": "COMPLETED"
+}
+
+DELETE /visitornumbers/:id

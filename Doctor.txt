@@ -1,0 +1,66 @@
+---------------------Doctor----------------------
+POST /doctors
+body
+{
+  "clinicId": 1,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "doctor_image.png"
+}
+
+response
+{
+  "message": "Doctor created successfully",
+  "doctorId": 1
+}
+
+GET /doctors
+response
+[
+  {
+    "id": 1,
+    "clinicId": 1,
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "birthDate": "1980-02-01",
+    "education": "MD",
+    "image": "doctor_image.png"
+  }
+]
+
+GET /doctors/:id
+response
+{
+  "id": 1,
+  "clinicId": 1,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "doctor_image.png"
+}
+
+PUT /doctors/:id
+body
+{
+  "clinicId": 2,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "new_doctor_image.png"
+}
+
+response
+{
+  "clinicId": 2,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "birthDate": "1980-02-01",
+  "education": "MD",
+  "image": "new_doctor_image.png"
+}
+
+DELETE /doctors/:id
